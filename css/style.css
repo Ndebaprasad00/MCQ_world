@@ -1,0 +1,89 @@
+/* <link rel="stylesheet" href="./css/style.css"> */
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background: url('../image/bg.jpg') center/cover no-repeat;
+    height: 100vh;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: black; */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: larger;
+    font-weight: bold;
+    font-style: italic;
+}
+
+nav a:hover{
+    color: goldenrod;
+}
+
+/* nav a:active,
+    .dropbtn:active {
+        color: black;
+    } */
+
+nav img {
+    height: 60px; /* Set the height of your logo */
+    margin-left: 20px; /* Adjust margin to separate logo from links */
+    width: 80px;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+    display: block;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icons a {
+    margin-left: 10px; /* Adjust the margin as needed */
+    justify-content: space-around;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.footer-content p {
+    margin-right: 20px; /* Adjust the margin as needed */
+}
+
