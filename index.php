@@ -17,7 +17,7 @@
     <nav>
         <a href="http://localhost/MCQ_world/"><img src="./image/4esyzR-LogoMakr.png" alt="Logo"></a>
         <div>
-        <button class='loginbtn' onclick='openlogin()' style="width:auto;">Register</button>
+        <button class='loginbtn' onclick='openlogin()' style="width:auto;">Sign Up</button>
            
         </div>
     </nav>
@@ -125,6 +125,7 @@
             <a href=""><i class="fa-brands fa-google"></i></a>
             <a href=""><i class="fa-brands fa-twitter"></i></a>
             <a href=""><i class="fa-brands fa-telegram"></i></a>
+            <button class="loginbtn1"><i class="fa-solid fa-unlock"></i></button>
             <!-- Add more social media icons as needed -->
         </div>
     </footer>

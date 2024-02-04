@@ -129,3 +129,16 @@ span
     /* background-color: #0056b3; Set your desired hover background color */
     color: goldenrod;
 }
+
+
+
+.loginbtn1{
+    display: inline-block;
+    /* padding: 10px 20px; */
+    /* text-align: center; */
+    color: purple;
+    background-color: transparent; /* Set your desired background color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
