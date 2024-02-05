@@ -8,6 +8,8 @@ $registrationSuccess = isset($_SESSION['registration_success']) && $_SESSION['re
 
 // Clear the session variable
 unset($_SESSION['registration_success']);
+
+
 ?>
 
 
@@ -163,6 +165,11 @@ unset($_SESSION['registration_success']);
     <div class="registration-success-container">
         <div class="registration-success-animation">&#10003; Registration Successful!</div>
     </div>
+
+
+    <section>
+        
+    </section>
 
 
     <header id='second'>

@@ -16,11 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($user && password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['first_name'] = $user['first_name'];
-            header("Location: http://localhost/MCQ_world/account.php?id={$user['id']}");
+            header("Location: http://localhost/MCQ_world/home.php?id={$user['id']}");
             exit();
         } else {
             echo 'Invalid email or password.';
-            header("Location: http://localhost/MCQ_world/account.php");
+            header("Location: http://localhost/MCQ_world/home.php");
             exit();
         }
     } catch (PDOException $e) {

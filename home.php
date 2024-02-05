@@ -35,7 +35,7 @@
                         $firstLetter = substr($firstName, 0, 1);
 
                         // Display the avatar image
-                        echo '<img src="https://via.placeholder.com/40/000/fff?text='.$firstLetter.'" alt="User Avatar" class="user-avatar" title="'.$firstLetter.'">';
+                        echo '<img src="https://via.placeholder.com/60/000/fff?text='.$firstLetter.'" alt="User Avatar" class="user-avatar" title="'.$firstLetter.'">';
                     }
                 }
                 

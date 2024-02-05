@@ -1,64 +1,84 @@
-<section id="adminlogin-form" >
-        <div >
-            <div class="form-box">
-            <div class='button-box'>
-                        <div id='btn'></div>
-                        <button type='button'onclick='login()'class='toggle-btn'>Log In</button>
-                        <button type='button'onclick='register()'class='toggle-btn'>Register</button>
-                    </div>
-                    <form id='login' class='input-group-login'>
-                        <input type='text'class='input-field'placeholder='Email Id' required >
-                        <input type='password'class='input-field'placeholder='Enter Password' required>
-                        <div class='loginf'>
-                            <input type='checkbox'class='check-box'><span>Remember Password</span>
-                            <a href="http://localhost/MCQ_world/" class='forget'><span>Forget Password</span></a>
-                        </div>
-                        <button type='submit'class='submit-btn'>Log in</button>
-                    </form>
-                    <form id='register' class='input-group-register'>
-                        <input type='text'class='input-field'placeholder='First Name' required>
-                        <input type='text'class='input-field'placeholder='Last Name ' required>
-                        <input type='email'class='input-field'placeholder='Email Id' required>
-                        <input type='password'class='input-field'placeholder='Enter Password' required>
-                        <input type='password'class='input-field'placeholder='Confirm Password'  required>
-                        <!-- <input type='checkbox'class='check-box'><span>I agree to the terms and conditions</span> -->
-                        <button type='submit'class='submit-btn'>Register</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <script>
-            var al=document.getElementById('adminlogin-form');
-            function adminlogin(){
-                al.style.display='block';
-                document.getElementById('login-form').style.display='none';
-                document.getElementById('first').style.display='none';
-                document.getElementById('second').style.display='none';
-                
+<!-- index.php -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <style>
+        /* style.css */
+body {
+    font-family: Arial, sans-serif;
+}
 
-            }
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-            var x=document.getElementById('login');
-            var y=document.getElementById('register');
-            var z=document.getElementById('btn');
-            var m=document.getElementById('first');
-            var h=document.getElementById('second');
-            var p=document.getElementById('third');
+.popup-content {
+    max-width: 400px;
+    margin: 0 auto;
+}
 
-            function register()
-            {
-                x.style.left='-400px';
-                y.style.left='50px';
-                z.style.left='110px'; 
-            }
-            function login()
-            {
-                x.style.left='50px';
-                y.style.left='450px';
-                z.style.left='0px';
-                
-            }
-        </script>
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
 
-           
-    </section>
+    </style>
+</head>
+<body>
+
+<div class="popup" id="registerPopup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup('registerPopup')">&times;</span>
+        <h2>Register</h2>
+        <form action="register.php" method="post">
+            <label for="reg_username">Username:</label>
+            <input type="text" id="reg_username" name="reg_username" required>
+            <label for="reg_password">Password:</label>
+            <input type="password" id="reg_password" name="reg_password" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</div>
+
+<div class="popup" id="loginPopup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup('loginPopup')">&times;</span>
+        <h2>Login</h2>
+        <form action="login.php" method="post">
+            <label for="login_username">Username:</label>
+            <input type="text" id="login_username" name="login_username" required>
+            <label for="login_password">Password:</label>
+            <input type="password" id="login_password" name="login_password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
+
+<button onclick="openPopup('registerPopup')">Register</button>
+<button onclick="openPopup('loginPopup')">Login</button>
+
+<script>
+    function openPopup(popupId) {
+        document.getElementById(popupId).style.display = "block";
+    }
+
+    function closePopup(popupId) {
+        document.getElementById(popupId).style.display = "none";
+    }
+</script>
+
+</body>
+</html>
