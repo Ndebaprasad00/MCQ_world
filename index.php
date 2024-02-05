@@ -32,19 +32,22 @@
                         <button type='button'onclick='login()'class='toggle-btn'>Log In</button>
                         <button type='button'onclick='register()'class='toggle-btn'>Register</button>
                     </div>
-                    <form id='login' class='input-group-login'>
-                        <input type='text'class='input-field'placeholder='Email Id' required >
-                        <input type='password'class='input-field'placeholder='Enter Password' required>
-                        <input type='checkbox'class='check-box'><span>Remember Password</span>
+                    <form id='login' class='input-group-login' method='post' action='#'>
+                        <input type='text'class='input-field'placeholder='Email Id' name='emailid' required >
+                        <input type='password'class='input-field'placeholder='Enter Password' name='passwordl' required>
+                        <div class='loginf'>
+                            <input type='checkbox'class='check-box'><span>Remember Password</span>
+                            <a href="forgot_password.php" class='forget'><span>Forgot Password</span></a>
+                        </div>
                         <button type='submit'class='submit-btn'>Log in</button>
                     </form>
-                    <form id='register' class='input-group-register'>
-                        <input type='text'class='input-field'placeholder='First Name' required>
-                        <input type='text'class='input-field'placeholder='Last Name ' required>
-                        <input type='email'class='input-field'placeholder='Email Id' required>
-                        <input type='password'class='input-field'placeholder='Enter Password' required>
-                        <input type='password'class='input-field'placeholder='Confirm Password'  required>
-                        <input type='checkbox'class='check-box'><span>I agree to the terms and conditions</span>
+                    <form id='register' class='input-group-register' method='post' action='#'>
+                        <input type='text'class='input-field'placeholder='First Name' name='first_name' required>
+                        <input type='text'class='input-field'placeholder='Last Name ' name='last_name' required>
+                        <input type='email'class='input-field'placeholder='Email Id' name='email'  required>
+                        <input type='password'class='input-field'placeholder='Enter Password' name='password' required>
+                        <input type='password'class='input-field'placeholder='Confirm Password' name='confirm_password' required>
+                        <!-- <input type='checkbox'class='check-box'><span>I agree to the terms and conditions</span> -->
                         <button type='submit'class='submit-btn'>Register</button>
                     </form>
                 </div>
@@ -62,6 +65,9 @@
             function openlogin(){
                 document.getElementById('login-form').style.display='block';
                 document.getElementById('first').style.display='none';
+                document.getElementById('second').style.display='none';
+                // document.getElementById('adminlogin-form').style.display='none';
+
             }
 
             function register()
@@ -81,26 +87,42 @@
         <script>
         document.addEventListener('DOMContentLoaded', function() {
             var modal = document.getElementById('login-form');
+            // var almodel=document.getElementById('adminlogin-form');
             modal.style.display = "none";
+            // almodel.style.display = "none";
             document.getElementById('first').style.display='block';
+            document.getElementById('second').style.display='block';
+            // document.getElementById('adminlogin-form').style.display='none';
+            // console.log("Hellloooo");
+
+
         });
 
         window.onclick = function(event) {
             var modal = document.getElementById('login-form');
+            // var almodel=document.getElementById('adminlogin-form');
             if (event.target == modal) {
                 modal.style.display = "none";
+                // almodel.style.display = "none";
                 document.getElementById('first').style.display='block';
+                document.getElementById('second').style.display='block';
+                // console.log("Hiiiii");
+
             }
         }
         </script>
 
     </section>
 
-    <main id='first'>
+
+
 
     <header id='second'>
         <h1>MCQ World</h1>
     </header>
+
+
+    <main id='first'>
 
 
         <!-- Your main content goes here -->
@@ -125,7 +147,7 @@
             <a href=""><i class="fa-brands fa-google"></i></a>
             <a href=""><i class="fa-brands fa-twitter"></i></a>
             <a href=""><i class="fa-brands fa-telegram"></i></a>
-            <button class="loginbtn1"><i class="fa-solid fa-unlock"></i></button>
+            <button class="loginbtn1" onclick='adminlogin()'><i class="fa-solid fa-unlock"></i></button>
             <!-- Add more social media icons as needed -->
         </div>
     </footer>
@@ -133,3 +155,34 @@
 </body>
 
 </html>
+
+<?php
+
+    include("register_handle.php");
+
+?>
+
+
+<?php
+    include("login_handle.php");
+
+    if(isset($_POST['emailid'])){
+        $email=$_POST['emailid'];
+        $pwd=$_POST['passwordl'];
+
+        $query = "SELECT * FROM user Where email=$email AND password=$pwd";
+        $data = mysqli_query($conn,$query);
+
+        $total = mysqli_num_rows($data);
+        if($total== 1){
+            // header('location:http://localhost/MCQ_world/');
+            ?>
+            <meta http-equiv = "refresh" content = "0; url = location:http://localhost/MCQ_world/"/>
+            <?php
+        }
+        else{
+            echo "Login failed";
+        }
+
+    }
+?>

@@ -1,8 +1,8 @@
-#login-form
+/* #login-form
 {
-    /* display: none; */
+    display: none;
     z-index: 1;
-}
+} */
 .form-box
 {
     width:380px;
@@ -89,6 +89,7 @@ span
 	font-size:12px;
 	bottom:68px;
 	position:absolute;
+	margin-left: 18px;
 }
 #login
 {
@@ -141,4 +142,32 @@ span
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.loginf{
+	display: flex;
+	flex-direction: row;
+	/* justify-content: space-evenly; */
+	gap: 148px;
+}
+
+
+
+#login1
+{
+	left:50px;
+}
+#login1 input
+{
+	color:white;
+	font-size:15;
+}
+#register1
+{
+	left:450px;
+}
+#register1 input
+{
+	color:white;
+	font-size: 15;
 }
