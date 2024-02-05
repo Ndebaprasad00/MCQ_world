@@ -1,19 +1,30 @@
 <?php
+// login_handle.php
+session_start();
+require_once 'config.php';
 
-error_reporting(0);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = $_POST['emailid'];
+    $password = $_POST['passwordl'];
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "MCQ_Assessment";
+    try {
+        $stmt = $conn->prepare("SELECT id, password, first_name FROM users WHERE email = ?");
+        $stmt->execute([$email]);
 
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if($conn)
-    {
+        if ($user && password_verify($password, $user['password'])) {
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['first_name'] = $user['first_name'];
+            header("Location: http://localhost/MCQ_world/account.php?id={$user['id']}");
+            exit();
+        } else {
+            echo 'Invalid email or password.';
+            header("Location: http://localhost/MCQ_world/account.php");
+            exit();
+        }
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
     }
-    else{
-        echo "Connection Failed" .mysqli_connect_error();
-    }
-
+}
 ?>

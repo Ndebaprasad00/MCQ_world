@@ -2,22 +2,6 @@
 // register_handle.php
 require_once 'config.php';
 
-// Create the users table if it doesn't exist
-try {
-    $createTableSQL = "CREATE TABLE IF NOT EXISTS users (
-        id INT PRIMARY KEY AUTO_INCREMENT,
-        first_name VARCHAR(255) NOT NULL,
-        last_name VARCHAR(255) NOT NULL,
-        email VARCHAR(255) NOT NULL UNIQUE,
-        password VARCHAR(255) NOT NULL,
-        role VARCHAR(50) DEFAULT 'user' NOT NULL
-    )";
-
-    $conn->exec($createTableSQL);
-} catch (PDOException $e) {
-    echo "Error creating table: " . $e->getMessage();
-}
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $firstName = $_POST['first_name'];
     $lastName = $_POST['last_name'];
@@ -30,8 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute([$email]);
 
         if ($stmt->rowCount() > 0) {
+            // User already exists
             echo 'User already exists.';
-            header("Location: http://localhost/MCQ_world");
+            header("Location: http://localhost/MCQ_world/");
             exit();
         } else {
             // Insert the new user into the database
