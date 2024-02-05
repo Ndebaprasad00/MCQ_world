@@ -3,7 +3,7 @@
     display: none;
     z-index: 1;
 } */
-.form-box
+.adminform-box
 {
     width:380px;
 	height:480px;
@@ -13,7 +13,7 @@
 	padding:10px;
     overflow: hidden;
 }
-.button-box
+.adminbutton-box
 {
 	width:220px;
 	margin:35px auto;
@@ -21,7 +21,7 @@
 	box-shadow: 0 0 20px 9px #ff61241f;
 	border-radius: 30px;
 }
-.toggle-btn
+.admintoggle-btn
 {
 	padding:10px 30px;
 	cursor:pointer;
@@ -30,7 +30,7 @@
 	outline: none;
 	position: relative;
 }
-#btn
+#adminbtn
 {
 	top: 0;
 	left:0;
@@ -41,21 +41,21 @@
 	border-radius: 30px;
 	transition: .5s;
 }
-.input-group-login
+.admininput-group-login
 {
 	top: 150px;
 	position:absolute;
 	width:280px;
 	transition:.5s;
 }
-.input-group-register
+.admininput-group-register
 {
     top: 120px;
 	position:absolute;
 	width:280px;
 	transition:.5s;
 }
-.input-field
+.admininput-field
 {
 	width: 100%;
 	padding:10px 0;
@@ -67,7 +67,7 @@
 	outline:none;
 	background: transparent;
 }
-.submit-btn
+.adminsubmit-btn
 {
 	width: 85%;
 	padding: 10px 30px;
@@ -79,7 +79,7 @@
 	outline: none;
 	border-radius: 30px;
 }
-.check-box
+.admincheck-box
 {
 	margin: 30px 10px 34px 0;
 }
@@ -91,27 +91,27 @@ span
 	position:absolute;
 	margin-left: 18px;
 }
-#login
+#adminlogin
 {
 	left:50px;
 }
-#login input
+#adminlogin input
 {
 	color:white;
 	font-size:15;
 }
-#register
+#adminregister
 {
 	left:450px;
 }
-#register input
+#adminregister input
 {
 	color:white;
 	font-size: 15;
 }
 
 
-.loginbtn{
+.adminloginbtn{
     display: inline-block;
     padding: 10px 20px;
     text-align: center;
@@ -126,14 +126,14 @@ span
     cursor: pointer;
 }
 
-.loginbtn:hover {
+.adminloginbtn:hover {
     /* background-color: #0056b3; Set your desired hover background color */
     color: goldenrod;
 }
 
 
 
-.loginbtn1{
+.adminloginbtn1{
     display: inline-block;
     /* padding: 10px 20px; */
     /* text-align: center; */
@@ -144,10 +144,9 @@ span
     cursor: pointer;
 }
 
-.loginf{
+.adminloginf{
 	display: flex;
 	flex-direction: row;
 	/* justify-content: space-evenly; */
 	gap: 148px;
 }
-

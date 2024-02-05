@@ -22,6 +22,7 @@ unset($_SESSION['registration_success']);
     <title>MCQ_World</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/register.css">
+    <link rel="stylesheet" href="./css/adminstyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         /* CSS for the tick animation */
@@ -78,7 +79,7 @@ unset($_SESSION['registration_success']);
                         <button type='button'onclick='login()'class='toggle-btn'>Log In</button>
                         <button type='button'onclick='register()'class='toggle-btn'>Register</button>
                     </div>
-                    <form id='login' class='input-group-login' method='post' action='login_handle.php'>
+                    <form id='login' class='input-group-login' method='post' action='login_handle.php' autocomplete="off">
                         <input type='text'class='input-field'placeholder='Email Id' name='emailid' required >
                         <input type='password'class='input-field'placeholder='Enter Password' name='passwordl' required>
                         <div class='loginf'>
@@ -87,7 +88,7 @@ unset($_SESSION['registration_success']);
                         </div>
                         <button type='submit'class='submit-btn'>Log in</button>
                     </form>
-                    <form id='register' class='input-group-register' method='post' action='register_handle.php'>
+                    <form id='register' class='input-group-register' method='post' action='register_handle.php' autocomplete="off">
                         <input type='text'class='input-field'placeholder='First Name' name='first_name' required>
                         <input type='text'class='input-field'placeholder='Last Name ' name='last_name' required>
                         <input type='email'class='input-field'placeholder='Email Id' name='email'  required>
@@ -112,7 +113,7 @@ unset($_SESSION['registration_success']);
                 document.getElementById('login-form').style.display='block';
                 document.getElementById('first').style.display='none';
                 document.getElementById('second').style.display='none';
-                // document.getElementById('adminlogin-form').style.display='none';
+                document.getElementById('adminlogin-form').style.display='none';
 
             }
 
@@ -167,9 +168,7 @@ unset($_SESSION['registration_success']);
     </div>
 
 
-    <section>
-        
-    </section>
+   
 
 
     <header id='second'>
@@ -213,6 +212,8 @@ unset($_SESSION['registration_success']);
             document.querySelector('.registration-success-container').style.display = 'none';
         }, 3000); // 3000 milliseconds = 3 seconds
     </script>
+
+    
 
 </body>
 
