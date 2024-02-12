@@ -1,5 +1,6 @@
 <?php
 // login_handle.php
+ob_start(); 
 session_start();
 require_once 'config.php';
 
@@ -27,4 +28,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Error: " . $e->getMessage();
     }
 }
+ob_end_flush();
 ?>

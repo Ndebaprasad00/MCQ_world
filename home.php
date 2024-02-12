@@ -72,6 +72,13 @@
             <a href=""><i class="fa-brands fa-telegram"></i></a>
         </div>
     </footer>
+<!-- 
+    <script>
+    // Prevents navigation when clicking the back button
+    window.addEventListener('popstate', function (event) {
+        history.pushState(null, document.title, location.href);
+    });
+</script> -->
 
 </body>
 
